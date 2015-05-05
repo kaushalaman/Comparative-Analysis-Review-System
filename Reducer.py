@@ -1,0 +1,44 @@
+#!/usr/bin/env python
+import sys
+"""def tree():
+    return collections.defaultdict(tree)
+h=tree()
+u=tree()"""
+f={}
+dh={"Moto X":[]}
+du={"Moto X":[]}
+for line in sys.stdin:
+    line=line.strip()
+    x=line.split("`")
+    print x
+    if len(x)>3:
+        dh[x[0]].append({x[1]:x[2]})
+        du[x[0]].append({x[1]:x[3]})
+        #h[x[0]][x[1]]=x[2]
+        #u[x[0]][x[1]]=x[3]
+    else:
+        f[x[0]]=x[1]
+print "Satisfied"
+for i in dh.keys():
+    try:
+        for j in range(10):
+            for k in dh[i][j].keys():
+                print i+"->"+k+"- Satisfied: "+dh[i][j][k]
+    except:
+        pass
+print "Unsatisfied"
+for i in du.keys():
+    try:
+        for j in range(10):
+            for k in du[i][j].keys():
+                print i+"->"+k+"- UnSatisfied: "+du[i][j][k]
+    except:
+        pass
+print "Overall Rating"
+for i in f.keys():
+    print "Overall Rating of "+i+": "+f[i]
+        
+    
+
+        
+        
