@@ -3,9 +3,9 @@ import re
 from bs4 import BeautifulSoup
 from pymongo import MongoClient
 
-proxy_support = urllib2.ProxyHandler({"http":"http://ipg_2011093:9907865940r@192.168.1.103:3128"})
-opener = urllib2.build_opener(proxy_support)
-urllib2.install_opener(opener)
+#proxy_support = urllib2.ProxyHandler({"http":"@192.168.1.103:3128"})
+#opener = urllib2.build_opener(proxy_support)
+#urllib2.install_opener(opener)
 
 client = MongoClient('127.0.0.1', 27017)
 db = client.reviews
